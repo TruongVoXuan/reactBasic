@@ -1,5 +1,5 @@
 import React from "react";
-
+import ChildComponent from "./childComponent";
 class MyComponent extends React.Component {
     /**
      * Component của React giúp render lại các html
@@ -11,7 +11,12 @@ class MyComponent extends React.Component {
         // name: '',
         // age: '22'
         firstName: '',
-        lastName: ''
+        lastName: '',
+        arrJobs: [
+            { id: 'abcJob1', title: 'Developers', salary: '500' },
+            { id: 'abcJob2', title: 'Testers', salary: '400' },
+            { id: 'abcJob3', title: 'Project managers', salary: '1000' },
+        ]
     }
 
     // handleClickButton = () => {
@@ -43,36 +48,12 @@ class MyComponent extends React.Component {
     render() {
 
         return (
-            // <div className="abc">
-            //     <div className="first">
-            //         console.log('My name is :', name)
-            //         hello my component , My name is {name}
-            //     </div>
-            //     <div className="second">
-            //         aaaaaaaaaaaaaaaaaaa
-            //     </div>
-            // </div>
 
             /**
              * khi dùng vậy thì console in ra 1 thẻ div bao bọc 2 thẻ div ở trong
              * muốn không bị bọc vậy thì dùng fragment còn dc kí hiệu là: <> </>
              */
             <>
-                {/* <div className="first">
-
-                    <input value={this.state.name} type="text"
-                        onChange={(event) => this.handleOnChangeName(event)}
-
-                    />
-                    My name is : {this.state.name}
-                </div>
-                <div className="second">
-
-                    My age is : {this.state.age}
-                </div>
-                <div className="third">
-                    <button onClick={() => this.handleClickButton()}> Click me!</button>
-                </div> */}
                 <form action="/action_page.php">
                     <label htmlFor="fname">First name:</label><br />
                     <input
@@ -93,6 +74,15 @@ class MyComponent extends React.Component {
                         onClick={(event) => this.handleSubmit(event)}
                     />
                 </form>
+
+                <ChildComponent
+                    name={this.state.firstName}
+                    age={'22'}
+                    address={'Nha Trang'}
+                    arrJobs={this.state.arrJobs}
+                />
+
+
 
             </>
 
