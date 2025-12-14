@@ -1,0 +1,35 @@
+.list-todo-container{
+    //hold chuột hình bàn tay
+    button{
+      cursor: pointer;
+    }
+  .add-todo{
+  .add{
+    margin: 0 10px;
+  }
+  }
+
+  .list-todo-content{
+    width: 400px;
+    margin: 0 auto;
+
+    .todo-child{
+
+        &:first-child{
+          margin-top: 20px;
+           border-top: 1px solid #8f7e7e;
+        }
+      border-bottom: 1px solid #8f7e7e;
+      margin-top: 10px;
+      height: 40px;
+
+      .edit{
+        margin: 0 10px;
+      }
+  
+
+    }
+
+   
+  }
+}
